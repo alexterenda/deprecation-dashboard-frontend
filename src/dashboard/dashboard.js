@@ -1,10 +1,11 @@
 import React from 'react'
+import Sidebar from "../components/sidebar/sidebar";
 
 const Dashboard = () => {
   //Insert components on this page
   return (
     <div>
-      <h1>Hello World!</h1>
+      <Sidebar />
     </div>
   )
 }
