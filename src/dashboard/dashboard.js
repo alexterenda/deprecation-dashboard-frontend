@@ -2,22 +2,18 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/sidebar/sidebar";
 import ApiList from "../components/api-list/api-list";
 import TopNav from "../components/top-nav/top-nav";
+import Panel from "../components/panel/panel";
 import MockData from "../mock-json/mock-json";
 
 const Dashboard = () => {
   const [data, setData] = useState(MockData);
-  const [statusColor, setStatusColor] = useState([]);
+  const [showPanel, setShowPanel] = useState(1);
+  
+  const handleShowPanel = (newId) => {
+    setShowPanel(newId);
+  }
 
-  useEffect(() => {
-    const new_arr = [];
-    MockData.versions.forEach((_) => {
-      new_arr.push("status-orange");
-    });
-    setStatusColor(new_arr);
-  }, []);
-
-  const checkStatusColor = (status, index) => {
-    let arr = [...statusColor];
+  const checkStatusColor = (status) => {
     let change;
     switch (status) {
       case "1":
@@ -33,8 +29,7 @@ const Dashboard = () => {
         change = "status-orange";
         break;
     }
-    arr[index] = change;
-    setStatusColor(arr);
+    return change;
   };
 
   return (
@@ -46,10 +41,16 @@ const Dashboard = () => {
         <TopNav />
         <ApiList
           data={data}
-          statusColor={statusColor}
-          changeColor={checkStatusColor}
+          changeColor = {showPanel}
+          checkStatusColor = {checkStatusColor}
+          showPanel = {handleShowPanel}
         />
       </div>
+      <Panel 
+        data = {data}
+        panelId = {showPanel}
+        checkStatusColor = {checkStatusColor}
+      />
     </div>
   );
 };
