@@ -1,0 +1,17 @@
+.status {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+
+  &-green {
+    background: green;
+  }
+
+  &-orange {
+    background: orange;
+  }
+
+  &-red {
+    background: red;
+  }
+}
