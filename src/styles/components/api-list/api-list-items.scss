@@ -1,3 +1,49 @@
+.api-list-item-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid green;
+}
+
+.api-list-item-image-container {
+  border: 1px solid pink;
+}
+
+.api-list-item-image {
+  margin: 1rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.api-list-item-left-container {
+  border: 1px solid blue;
+  flex: 1 1 0;
+}
+
+.api-list-item-middle-container {
+  margin-left: auto;
+  border: 1px solid pink;
+  flex: 1 1 0;
+}
+
+.api-list-item-right-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  border: 1px solid blue;
+}
+
+.api-list-item-icon-container {
+  border: 1px solid pink;
+  margin: 1rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.api-list-item-icon {
+}
+
 .status {
   height: 50px;
   width: 50px;

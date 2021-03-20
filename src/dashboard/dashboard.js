@@ -8,10 +8,10 @@ import MockData from "../mock-json/mock-json";
 const Dashboard = () => {
   const [data, setData] = useState(MockData);
   const [showPanel, setShowPanel] = useState(1);
-  
+
   const handleShowPanel = (newId) => {
     setShowPanel(newId);
-  }
+  };
 
   const checkStatusColor = (status) => {
     let change;
@@ -41,16 +41,18 @@ const Dashboard = () => {
         <TopNav />
         <ApiList
           data={data}
-          changeColor = {showPanel}
-          checkStatusColor = {checkStatusColor}
-          showPanel = {handleShowPanel}
+          changeColor={showPanel}
+          checkStatusColor={checkStatusColor}
+          showPanel={handleShowPanel}
         />
       </div>
-      <Panel 
-        data = {data}
-        panelId = {showPanel}
-        checkStatusColor = {checkStatusColor}
-      />
+      <div className="dashboard-panel-wrapper">
+        <Panel
+          data={data}
+          panelId={showPanel}
+          checkStatusColor={checkStatusColor}
+        />
+      </div>
     </div>
   );
 };
