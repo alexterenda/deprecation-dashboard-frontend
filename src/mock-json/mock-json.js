@@ -7,9 +7,10 @@ const MockData = {
         tray_version: "v1.0.2",
         latest_version: "v1.0.3",
         developer: "Harry Smith",
-        desription: "The Twitter API enables programmatic access to Twitter in unique and advanced ways.",
+        description: "The Twitter API enables programmatic access to Twitter in unique and advanced ways.",
         api_acc_manager: "Susan Crawford",
-        logo_url: "https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-articleLarge-v4.jpg?quality=75&auto=webp&disable=upscale"
+        logo_url: "https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-articleLarge-v4.jpg?quality=75&auto=webp&disable=upscale",
+        last_update: "02/02/21"
       },
       updates: [{
           id: 1,
@@ -40,8 +41,9 @@ const MockData = {
         latest_version: "v5.7.1",
         developer: "Ronald McDonald",
         description: "Reddit API Access. We want to allow developers to build great products powered by Reddit and we recognize our developer community.",
-        api_account_manager: "Susan Crawford",
-        logo_url: "https://i.redd.it/2qy7unjo2j331.png"
+        api_acc_manager: "Susan Crawford",
+        logo_url: "https://i.redd.it/2qy7unjo2j331.png",
+        last_update: "21/01/21"
       },
       updates: [{
           id: 2,
@@ -72,7 +74,8 @@ const MockData = {
         developer: "Samantha Bourne",
         description: "The Yelp API gives you access to search for over 50,000,000 businesses in 32 countries.",
         api_acc_manager: "Dimitri Turkov",
-        logo_url: "https://s3-media2.fl.yelpcdn.com/assets/srv0/styleguide/ea6185261f17/assets/img/brand_guidelines/fuoy.png"
+        logo_url: "https://s3-media2.fl.yelpcdn.com/assets/srv0/styleguide/ea6185261f17/assets/img/brand_guidelines/fuoy.png",
+        last_update: "12/29/20"
       },
       updates: [{
         id: 4,
