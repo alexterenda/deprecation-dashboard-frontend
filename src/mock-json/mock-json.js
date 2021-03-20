@@ -1,6 +1,7 @@
-const MockData = [{
+const MockData = {
   versions: [{
       apis: {
+        name: "Twitter",
         status: "1",
         tray_version: "v1.0.2",
         latest_version: "v1.0.3"
@@ -27,7 +28,8 @@ const MockData = [{
     },
     {
       apis: {
-        status: "1",
+        name: "Reddit",
+        status: "3",
         tray_version: "v5.6.8",
         latest_version: "v5.7.1"
       },
@@ -52,6 +54,7 @@ const MockData = [{
       ]
     }, {
       apis: {
+        name: "Yelp",
         status: "2",
         tray_version: "v11.0.1",
         latest_version: "v11.2.3"
@@ -103,7 +106,7 @@ const MockData = [{
     id: 3,
     username: "harry@potter.com"
   }]
-}];
+};
 
 
 export default MockData;
