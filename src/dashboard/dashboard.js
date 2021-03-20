@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import Sidebar from "../components/sidebar/sidebar";
 import ApiList from "../components/api-list/api-list";
 import TopNav from "../components/top-nav/top-nav";
@@ -11,10 +11,10 @@ const Dashboard = () => {
   useEffect(() => {
     const new_arr = [];
     MockData.versions.forEach((_) => {
-      new_arr.push('status-orange');
+      new_arr.push("status-orange");
     });
     setStatusColor(new_arr);
-  }, [])
+  }, []);
 
   const checkStatusColor = (status, index) => {
     let arr = [...statusColor];
@@ -35,19 +35,23 @@ const Dashboard = () => {
     }
     arr[index] = change;
     setStatusColor(arr);
-  }
+  };
 
   return (
-    <div>
-      <Sidebar />
-      <TopNav />
-      <ApiList 
-        data = {data}
-        statusColor = {statusColor}
-        changeColor = {checkStatusColor}
-      />
+    <div className="dashboard">
+      <div className="dashboard-sidebar-wrapper">
+        <Sidebar />
+      </div>
+      <div className="dashboard-contents-container">
+        <TopNav />
+        <ApiList
+          data={data}
+          statusColor={statusColor}
+          changeColor={checkStatusColor}
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;
