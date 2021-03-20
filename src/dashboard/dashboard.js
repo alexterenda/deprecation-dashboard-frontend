@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Sidebar from "../components/sidebar/sidebar";
 import ApiList from "../components/api-list/api-list";
+import TopNav from "../components/top-nav/top-nav";
 import MockData from "../mock-json/mock-json";
 
 const Dashboard = () => {
@@ -39,6 +40,7 @@ const Dashboard = () => {
   return (
     <div>
       <Sidebar />
+      <TopNav />
       <ApiList 
         data = {data}
         statusColor = {statusColor}
