@@ -3,11 +3,8 @@ import DeprecationStatus from "../depreciation-status/deprecation-status";
 
 const EachUpdateLink = (props) => {
   return (
-    <div>
+    <div onClick={() => props.showUpdateEmail(props.updateId)}>
       <p>{props.name} UPDATE {props.version}</p>
-      <p>{props.date}</p>
-      <a href={props.source} target="blank">{props.link}</a>
-      <p>Description: {props.text}</p>
       <DeprecationStatus checkStatusColor = {props.checkStatusColor} status={props.status}/>
     </div>
   )

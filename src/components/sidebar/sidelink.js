@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const SideLink = (props) => {
   return (
-    <>
+    <Fragment>
       <div className="sidebar-sidelink-container">
         <div className="sidebar-sidelink-item">
           <div className="sidebar-sidelink-icon-container">
@@ -28,7 +28,7 @@ const SideLink = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </Fragment>
   );
 };
 
