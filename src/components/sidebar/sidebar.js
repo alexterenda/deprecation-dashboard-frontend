@@ -1,9 +1,13 @@
 import React from 'react'
 import SideLink from "./sidelink";
 
-const SideBar = (props) => {
+const SideBar = () => {
   const links = ["Home", "Inbox", "My APIs", "Collection", "AMBER's APIs", "GRAPHQL APIs"];
-  const createLinks = links.map(link => <SideLink content = {link}/>)
+  const createLinks = links.map((link) => {
+    return (
+      <SideLink content = {link}/>
+    );
+  });
 
   return (
     <div>
