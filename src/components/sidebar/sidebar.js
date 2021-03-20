@@ -1,5 +1,6 @@
 import React from 'react'
 import SideLink from "./sidelink";
+import SideHeader from "./sidebar-header";
 
 const SideBar = () => {
   const links = ["Home", "Inbox", "My APIs", "Collection", "AMBER's APIs", "GRAPHQL APIs"];
@@ -11,8 +12,7 @@ const SideBar = () => {
 
   return (
     <div>
-      <h3>tray.io</h3>
-      <h1>Depreciation Dashboard</h1>
+      <SideHeader />
       <div>
         {createLinks}
       </div>
