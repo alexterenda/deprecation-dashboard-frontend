@@ -68,13 +68,13 @@ const Dashboard = () => {
   const checkStatusColor = (status) => {
     let change;
     switch (status) {
-      case "1":
+      case "urgent":
         change = "status-red";
         break;
-      case "2":
+      case "pending":
         change = "status-orange";
         break;
-      case "3":
+      case "clear":
         change = "status-green";
         break;
       default:
@@ -91,6 +91,7 @@ const Dashboard = () => {
       Endpoint: ${formData.endpoint}
       Source: ${formData.source}
       Id: ${formData.id}
+      Status: ${formData.status}
     `);
   }
 
