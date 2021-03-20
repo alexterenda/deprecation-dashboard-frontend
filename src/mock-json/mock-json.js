@@ -18,7 +18,7 @@ const MockData = {
           status: "3",
           deprecation_date: "05/04/2021",
           endpoint: "https://api.github.com/user/keys",
-          text: "This is a fantastic new update coming in 3 weeks.",
+          text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, obcaecati neque. Ipsam a inventore quam quibusdam sint iste deleniti, rem unde sapiente molestiae quidem nam ratione quia sunt, commodi dolore.",
           source: "https://developer.github.com/changes/2020-02-14-deprecating-password-auth/"
         },
         {
@@ -27,7 +27,7 @@ const MockData = {
           status: "3",
           deprecation_date: "12/04/2021",
           endpoint: "https://api.github.com/user/keys",
-          text: "This is a fantastic new update coming in 4 weeks.",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed commodi mollitia accusantium odit molestiae aut sunt minima tempora nihil aliquam quidem, ullam aperiam. Ab vitae voluptatum incidunt, facilis voluptatibus tempora.",
           source: "https://developer.github.com/changes/2020-02-14-deprecating-password-auth/"
         }
       ]
@@ -51,7 +51,7 @@ const MockData = {
           status: "3",
           deprecation_date: "15/04/2021",
           endpoint: "https://api.github.com/user/keys",
-          text: "New features include being able to send data easily.",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non mollitia fuga ab eius velit laboriosam aliquam ea assumenda, at quidem cum asperiores architecto consequuntur rerum sit iure officia ipsam officiis.",
           source: "https://developer.github.com/changes/2020-02-14-deprecating-password-auth/"
         },
         {
@@ -60,7 +60,7 @@ const MockData = {
           status: "3",
           deprecation_date: "25/04/2021",
           endpoint: "https://api.github.com/user/keys",
-          text: "New features include new data fields.",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure provident rerum asperiores natus nemo architecto dolor rem quos dicta labore, atque totam nihil ullam veniam porro cupiditate neque minus consequatur.",
           source: "https://developer.github.com/changes/2020-02-14-deprecating-password-auth/"
         }
       ]
@@ -83,7 +83,7 @@ const MockData = {
         status: "3",
         deprecation_date: "20/05/2021",
         endpoint: "https://api.github.com/user/keys",
-        text: "One month away will be amazing to see these new updates.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, quae tenetur ratione nesciunt et explicabo velit pariatur iure nemo cumque perferendis dolores quo. Earum laborum in enim doloribus sed obcaecati.",
         source: "https://developer.github.com/changes/2020-02-14-deprecating-password-auth/"
       }]
     }

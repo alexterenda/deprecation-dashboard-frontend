@@ -1,9 +1,10 @@
 import React from 'react'
 import PanelImage from "./image/image";
-import Header from "./header/header";
+import Header from "../header/header";
 import ApiContent from "./api-content/api-content";
 import Connection from "./connection/connection";
 import DeprecationStatus from '../depreciation-status/deprecation-status';
+import Updates from '../updates/updates';
 
 const Panel = (props) => {
   const currentPanelItem = props.data.versions.find(e => e.apis.id === props.panelId);
@@ -29,6 +30,12 @@ const Panel = (props) => {
           leadDev = {currentPanelItem.apis.developer}
         />
       </div>
+      <Updates 
+        name = {currentPanelItem.apis.name}
+        updates = {currentPanelItem.updates}
+        latestVersion = {currentPanelItem.apis.latest_version}
+        checkStatusColor={props.checkStatusColor}
+      />
     </div>
   )
 }
