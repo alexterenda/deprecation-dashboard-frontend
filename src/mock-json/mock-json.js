@@ -33,6 +33,7 @@ const MockData = {
     },
     {
       apis: {
+        id: 2,
         name: "Reddit",
         status: "3",
         tray_version: "v5.6.8",
@@ -63,6 +64,7 @@ const MockData = {
       ]
     }, {
       apis: {
+        id: 3,
         name: "Yelp",
         status: "2",
         tray_version: "v11.0.1",

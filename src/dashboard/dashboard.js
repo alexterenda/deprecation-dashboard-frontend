@@ -8,6 +8,7 @@ import MockData from "../mock-json/mock-json";
 const Dashboard = () => {
   const [data, setData] = useState(MockData);
   const [statusColor, setStatusColor] = useState([]);
+  const [showPanel, setShowPanel] = useState(1);
 
   useEffect(() => {
     const new_arr = [];
@@ -16,6 +17,10 @@ const Dashboard = () => {
     });
     setStatusColor(new_arr);
   }, [])
+
+  const handleShowPanel = (newId) => {
+    setShowPanel(newId);
+  }
 
   const checkStatusColor = (status, index) => {
     let arr = [...statusColor];
@@ -45,9 +50,13 @@ const Dashboard = () => {
       <ApiList 
         data = {data}
         statusColor = {statusColor}
-        changeColor = {checkStatusColor}
+        changeColor = {showPanel}
+        showPanel = {handleShowPanel}
       />
-      <Panel data = {data}/>
+      <Panel 
+        data = {data}
+        panelId = {showPanel}
+      />
     </div>
   )
 }
