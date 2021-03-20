@@ -1,0 +1,14 @@
+.dashboard {
+  display: flex;
+}
+
+.dashboard-sidebar-wrapper {
+  max-width: 16rem;
+}
+
+.dashboard-contents-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid cyan;
+}

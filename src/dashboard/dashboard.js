@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import Sidebar from "../components/sidebar/sidebar";
 import ApiList from "../components/api-list/api-list";
 import TopNav from "../components/top-nav/top-nav";
@@ -8,7 +8,7 @@ import MockData from "../mock-json/mock-json";
 const Dashboard = () => {
   const [data, setData] = useState(MockData);
   const [showPanel, setShowPanel] = useState(1);
-
+  
   const handleShowPanel = (newId) => {
     setShowPanel(newId);
   }
@@ -30,25 +30,29 @@ const Dashboard = () => {
         break;
     }
     return change;
-  }
+  };
 
   return (
-    <div>
-      <Sidebar />
-      <TopNav />
-      <ApiList 
-        data = {data}
-        checkStatusColor = {checkStatusColor}
-        changeColor = {showPanel}
-        showPanel = {handleShowPanel}
-      />
+    <div className="dashboard">
+      <div className="dashboard-sidebar-wrapper">
+        <Sidebar />
+      </div>
+      <div className="dashboard-contents-container">
+        <TopNav />
+        <ApiList
+          data={data}
+          changeColor = {showPanel}
+          checkStatusColor = {checkStatusColor}
+          showPanel = {handleShowPanel}
+        />
+      </div>
       <Panel 
         data = {data}
         panelId = {showPanel}
         checkStatusColor = {checkStatusColor}
       />
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;
