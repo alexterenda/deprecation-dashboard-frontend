@@ -32,6 +32,15 @@ const Dashboard = () => {
     return change;
   };
 
+  const handleFormDataSubmit = (formData) => {
+    alert(`
+      Date: ${formData.date}
+      Endpoint: ${formData.endpoint}
+      Source: ${formData.source}
+      Id: ${formData.id}
+    `);
+  }
+
   return (
     <div className="dashboard">
       <div className="dashboard-sidebar-wrapper">
@@ -51,6 +60,7 @@ const Dashboard = () => {
           data={data}
           panelId={showPanel}
           checkStatusColor={checkStatusColor}
+          handleFormDataSubmit={handleFormDataSubmit}
         />
       </div>
     </div>

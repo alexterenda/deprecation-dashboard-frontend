@@ -36,6 +36,8 @@ const Updates = (props) => {
         />
         {(show && showId.includes(update.id)) ? <UpdateEmail 
           text={update.text}
+          id={update.id}
+          handleFormDataSubmit={props.handleFormDataSubmit}
         /> : null }
       </Fragment>
     );

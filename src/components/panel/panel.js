@@ -35,6 +35,7 @@ const Panel = (props) => {
         updates = {currentPanelItem.updates}
         latestVersion = {currentPanelItem.apis.latest_version}
         checkStatusColor={props.checkStatusColor}
+        handleFormDataSubmit={props.handleFormDataSubmit}
       />
     </div>
   )
