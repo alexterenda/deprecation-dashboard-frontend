@@ -1,18 +1,69 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Sidebar from "../components/sidebar/sidebar";
 import ApiList from "../components/api-list/api-list";
 import TopNav from "../components/top-nav/top-nav";
 import Panel from "../components/panel/panel";
-import MockData from "../mock-json/mock-json";
+import initStateData from "./initial-state-data";
+import Loader from "../components/loader/loader";
 
 const Dashboard = () => {
-  const [data, setData] = useState(MockData);
+  const [data, setData] = useState(initStateData);
   const [showPanel, setShowPanel] = useState(1);
+  const [loader, setLoader] = useState(false);
 
+  useEffect(() => {
+    const fetchData = () => {
+      setLoader(true);
+      fetch('http://localhost:3001/api/index')
+        .then(res => res.json())
+        .then(val => {
+          const newVersions = val.apis.map((version) => {
+            return {
+              id: version.id,
+              name: version.name,
+              status: version.status,
+              tray_version: version.tray_version,
+              latest_version: version.latest_version,
+              developer: version.developer,
+              description: version.description,
+              api_acc_manager: version.api_acc_manager,
+              logo_url: version.logo_url,
+              last_update: version.created_at
+            }
+          });
+
+          const newUpdates = val.updates.map((update) => {
+            return {
+              id: update.id,
+              api_id: update.api_id,
+              status: update.status,
+              deprecation_date: update.change_date,
+              source: update.source,
+              endpoint: update.endpoint,
+              text: update.text
+            }
+          });
+          const finalVersion = val.apis.map((fin) => {
+            const nversion = newVersions.find(e => e.id === fin.id);
+            const nupdate = newUpdates.filter(e => e.api_id === fin.id);
+            return {
+              apis: nversion,
+              updates: nupdate
+            }
+          });
+          setData({ versions: finalVersion });
+          setLoader(false);
+        })
+        .catch(err => console.log(err));
+    }
+    fetchData();
+  }, [])
   const handleShowPanel = (newId) => {
     setShowPanel(newId);
   };
 
+  // console.log(data);
+  
   const checkStatusColor = (status) => {
     let change;
     switch (status) {
@@ -48,20 +99,22 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-contents-container">
         <TopNav />
-        <ApiList
-          data={data}
-          changeColor={showPanel}
-          checkStatusColor={checkStatusColor}
-          showPanel={handleShowPanel}
-        />
+        {loader ? <Loader /> : <Fragment>
+          <ApiList
+            data={data}
+            changeColor={showPanel}
+            checkStatusColor={checkStatusColor}
+            showPanel={handleShowPanel}
+          />
+        </Fragment>}
       </div>
       <div className="dashboard-panel-wrapper">
-        <Panel
+        {loader ? <Loader/> : <Panel
           data={data}
           panelId={showPanel}
           checkStatusColor={checkStatusColor}
           handleFormDataSubmit={handleFormDataSubmit}
-        />
+        />}
       </div>
     </div>
   );
