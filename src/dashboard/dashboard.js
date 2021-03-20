@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Sidebar from "../components/sidebar/sidebar";
 import ApiList from "../components/api-list/api-list";
 import TopNav from "../components/top-nav/top-nav";
+import Panel from "../components/panel/panel";
 import MockData from "../mock-json/mock-json";
 
 const Dashboard = () => {
@@ -46,6 +47,7 @@ const Dashboard = () => {
         statusColor = {statusColor}
         changeColor = {checkStatusColor}
       />
+      <Panel data = {data}/>
     </div>
   )
 }
