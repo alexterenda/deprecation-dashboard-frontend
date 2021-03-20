@@ -14,9 +14,10 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = () => {
       setLoader(true);
-      fetch('http://localhost:3001/api/index')
+      fetch('http://localhost:3001/')
         .then(res => res.json())
         .then(val => {
+          console.log(val);
           const newVersions = val.apis.map((version) => {
             return {
               id: version.id,
@@ -84,6 +85,7 @@ const Dashboard = () => {
   };
 
   const handleFormDataSubmit = (formData) => {
+    // /updates/:id(.:format)
     alert(`
       Date: ${formData.date}
       Endpoint: ${formData.endpoint}
