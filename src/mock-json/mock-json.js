@@ -41,7 +41,7 @@ const MockData = {
         developer: "Ronald McDonald",
         description: "Reddit API Access. We want to allow developers to build great products powered by Reddit and we recognize our developer community.",
         api_account_manager: "Susan Crawford",
-        logo_url: "https://logodownload.org/wp-content/uploads/2018/02/reddit-logo.png"
+        logo_url: "https://i.redd.it/2qy7unjo2j331.png"
       },
       updates: [{
           id: 2,

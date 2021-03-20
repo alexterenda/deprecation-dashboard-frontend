@@ -7,23 +7,13 @@ import MockData from "../mock-json/mock-json";
 
 const Dashboard = () => {
   const [data, setData] = useState(MockData);
-  const [statusColor, setStatusColor] = useState([]);
   const [showPanel, setShowPanel] = useState(1);
-
-  useEffect(() => {
-    const new_arr = [];
-    MockData.versions.forEach((_) => {
-      new_arr.push('status-orange');
-    });
-    setStatusColor(new_arr);
-  }, [])
 
   const handleShowPanel = (newId) => {
     setShowPanel(newId);
   }
 
-  const checkStatusColor = (status, index) => {
-    let arr = [...statusColor];
+  const checkStatusColor = (status) => {
     let change;
     switch (status) {
       case "1":
@@ -39,8 +29,7 @@ const Dashboard = () => {
         change = "status-orange";
         break;
     }
-    arr[index] = change;
-    setStatusColor(arr);
+    return change;
   }
 
   return (
@@ -49,13 +38,14 @@ const Dashboard = () => {
       <TopNav />
       <ApiList 
         data = {data}
-        statusColor = {statusColor}
+        checkStatusColor = {checkStatusColor}
         changeColor = {showPanel}
         showPanel = {handleShowPanel}
       />
       <Panel 
         data = {data}
         panelId = {showPanel}
+        checkStatusColor = {checkStatusColor}
       />
     </div>
   )

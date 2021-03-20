@@ -1,4 +1,5 @@
 import React from 'react'
+import DeprecationStatus from "../depreciation-status/deprecation-status";
 
 const ApiListItem = (props) => {
   return (
@@ -8,7 +9,7 @@ const ApiListItem = (props) => {
         <p>{props.trayVersion}</p>
         <p>{props.latestVersion}</p>
       </div>
-      <div className={`status ${props.statusColor}`}></div>
+      <DeprecationStatus checkStatusColor = {props.checkStatusColor} status={props.status} />
     </div>
   )
 }
