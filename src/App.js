@@ -1,9 +1,11 @@
-// import "./App.css";
+import "./styles/index.scss";
+import Dashboard from './dashboard/dashboard';
+
 
 function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <Dashboard />
     </div>
   );
 }
