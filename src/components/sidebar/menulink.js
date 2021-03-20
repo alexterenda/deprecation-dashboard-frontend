@@ -1,8 +1,8 @@
-import React from "react";
+import React, {Fragment} from "react";
 
 const MenuLink = (props) => {
   return (
-    <>
+    <Fragment>
       <div className="sidebar-menulink-container">
         <div className="sidebar-menulink-item">
           <div className="sidebar-menulink-text-container">
@@ -12,7 +12,7 @@ const MenuLink = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </Fragment>
   );
 };
 
