@@ -18,16 +18,11 @@ const Dashboard = () => {
     text: "",
     apiId: ""
   });
-  const local = true;
-  // const domain = local ? "http://localhost:3001/" : "https:"
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  const local = false;
+  const domain = local ? "http://localhost:3001/" : "https://tray-dashboard-aadt.herokuapp.com/"
   const fetchData = () => {
     setLoader(true);
-    fetch("http://localhost:3001/")
+    fetch(domain)
       .then((res) => res.json())
       .then((val) => {
         console.log(val);
@@ -101,6 +96,11 @@ const Dashboard = () => {
     });
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
   // console.log(data);
 
   const handleStateUpdate = (el, type, id) => {
@@ -141,7 +141,7 @@ const Dashboard = () => {
     const json_rb_object = JSON.stringify(rbObject);
     console.log(formData)
 
-    axios.patch(`http://localhost:3001/updates/${formData.id}`, json_rb_object, {
+    axios.patch(`${domain}updates/${formData.id}`, json_rb_object, {
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
@@ -163,7 +163,7 @@ const Dashboard = () => {
     const json_note_text_obj = JSON.stringify(noteTextObj);
 
     // need to send a post request for the data
-    axios.post(`http://localhost:3001/notes`, json_note_text_obj, {
+    axios.post(`${domain}notes`, json_note_text_obj, {
       headers: { "Content-Type": "application/json" },
     })
     .then((response) => {
@@ -183,7 +183,7 @@ const Dashboard = () => {
     }
 
     const json_new_obj = JSON.stringify(new_obj);
-    axios.post(`http://localhost:3001/updates`, json_new_obj, {
+    axios.post(`${domain}updates`, json_new_obj, {
       headers: { "Content-Type": "application/json" },
     })
     .then((response) => {
