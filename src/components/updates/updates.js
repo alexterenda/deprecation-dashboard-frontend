@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import Header from "../header/header";
 import EachUpdateLink from "./each-update-link";
 import UpdateEmail from "./update-email";
+import Notes from "../notes/notes";
 
 
 const Updates = (props) => {
@@ -34,11 +35,17 @@ const Updates = (props) => {
           updateId={update.id}
           showUpdateEmail={showUpdateEmail}
         />
-        {(show && showId.includes(update.id)) ? <UpdateEmail 
-          text={update.text}
-          id={update.id}
-          handleFormDataSubmit={props.handleFormDataSubmit}
-        /> : null }
+        {(show && showId.includes(update.id)) ? <Fragment>
+          <UpdateEmail 
+            text={update.text}
+            id={update.id}
+            handleFormDataSubmit={props.handleFormDataSubmit}
+          />
+          <Notes 
+            handleAddNote={props.handleAddNote}
+            id={update.id}
+          />
+        </Fragment> : null }
       </Fragment>
     );
   });

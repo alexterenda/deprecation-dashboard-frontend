@@ -41,6 +41,7 @@ const Panel = (props) => {
           latestVersion = {currentPanelItem.apis.latest_version}
           checkStatusColor={props.checkStatusColor}
           handleFormDataSubmit={props.handleFormDataSubmit}
+          handleAddNote={props.handleAddNote}
         />
         </Fragment> : <Loader /> }
     </div>

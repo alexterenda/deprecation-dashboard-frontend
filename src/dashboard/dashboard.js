@@ -106,6 +106,12 @@ const Dashboard = () => {
       .catch(error => console.log(error));
   }
 
+  const handleAddNote = (noteText, id) => {
+    // need to send a post request for the data
+    console.log(noteText);
+    console.log(id);
+  }
+
   return (
     <div className="dashboard">
       <div className="dashboard-sidebar-wrapper">
@@ -128,6 +134,7 @@ const Dashboard = () => {
           panelId={showPanel}
           checkStatusColor={checkStatusColor}
           handleFormDataSubmit={handleFormDataSubmit}
+          handleAddNote={handleAddNote}
         />}
       </div>
     </div>
