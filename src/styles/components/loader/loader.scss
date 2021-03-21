@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   .loader {
     font-size: 10px;
     margin: 50px auto;
@@ -12,11 +12,19 @@
     height: 11em;
     border-radius: 50%;
     background: #111827;
-    background: -moz-linear-gradient(left, #111827 10%, rgba(17,24,39, 0) 42%);
-    background: -webkit-linear-gradient(left, #111827 10%, rgba(17,24,39, 0) 42%);
-    background: -o-linear-gradient(left, #111827 10%, rgba(17,24,39, 0) 42%);
-    background: -ms-linear-gradient(left, #111827 10%, rgba(17,24,39, 0) 42%);
-    background: linear-gradient(to right, #111827 10%, rgba(17,24,39, 0) 42%);
+    background: -moz-linear-gradient(
+      left,
+      #111827 10%,
+      rgba(17, 24, 39, 0) 42%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      #111827 10%,
+      rgba(17, 24, 39, 0) 42%
+    );
+    background: -o-linear-gradient(left, #111827 10%, rgba(17, 24, 39, 0) 42%);
+    background: -ms-linear-gradient(left, #111827 10%, rgba(17, 24, 39, 0) 42%);
+    background: linear-gradient(to right, #111827 10%, rgba(17, 24, 39, 0) 42%);
     position: relative;
     -webkit-animation: load3 1.4s infinite linear;
     animation: load3 1.4s infinite linear;
@@ -32,14 +40,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    content: '';
+    content: "";
   }
   .loader:after {
     background: #ffffff;
     width: 75%;
     height: 75%;
     border-radius: 50%;
-    content: '';
+    content: "";
     margin: auto;
     position: absolute;
     top: 0;
@@ -66,5 +74,73 @@
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
+  }
+}
+
+.loader2-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: -10%;
+}
+
+// Loading Animation
+
+$offset: 187;
+$duration: 2.1s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  opacity: 0.8;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite,
+    colors ($duration * 4) ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: #111827;
+  }
+  25% {
+    stroke: #111827;
+  }
+  50% {
+    stroke: #111827;
+  }
+  75% {
+    stroke: #111827;
+  }
+  100% {
+    stroke: #111827;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
   }
 }
