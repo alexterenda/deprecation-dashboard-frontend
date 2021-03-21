@@ -19,119 +19,121 @@ const Panel = (props) => {
   }
 
   return (
-    <div className="panel-container">
-      {!props.data.tester ? (
-        <Fragment>
-          <div className="panel-header-contents-container">
-            <div className="panel-api-contents-container">
-              <div className="panel-api-contents-header-container">
-                <div className="panel-api-contents-header-container-left">
-                  <Header title = {currentPanelItem.apis.name}/>
+    <Fragment>
+      {currentPanelItem ? <div className="panel-container">
+        {!props.data.tester ? (
+          <Fragment>
+            <div className="panel-header-contents-container">
+              <div className="panel-api-contents-container">
+                <div className="panel-api-contents-header-container">
+                  <div className="panel-api-contents-header-container-left">
+                    <Header title = {currentPanelItem.apis.name}/>
+                  </div>
+                  <div className="panel-api-contents-header-container-right">
+                    <DeprecationStatus checkStatusColor = {props.checkStatusColor} status = {currentPanelItem.apis.status} />
+                  </div>
                 </div>
-                <div className="panel-api-contents-header-container-right">
-                  <DeprecationStatus checkStatusColor = {props.checkStatusColor} status = {currentPanelItem.apis.status} />
+                <div className="panel-api-contents-account-container">
+                  <p className="panel-api-contents-account-header">
+                    Account Manager
+                  </p>
+                  <p className="panel-api-contents-account">
+                    {currentPanelItem.apis.api_acc_manager}
+                  </p>
                 </div>
               </div>
-              <div className="panel-api-contents-account-container">
-                <p className="panel-api-contents-account-header">
-                  Account Manager
-                </p>
-                <p className="panel-api-contents-account">
-                  {currentPanelItem.apis.api_acc_manager}
-                </p>
+              <div className="panel-image-container">
+                <PanelImage logoUrl = {currentPanelItem.apis.logo_url} />
               </div>
             </div>
-            <div className="panel-image-container">
-              <PanelImage logoUrl = {currentPanelItem.apis.logo_url} />
+            <Divider />
+            <div className="panel-description-container">
+              <p className="panel-connection-header">Description</p>
+              <p className="panel-description">
+                {currentPanelItem.apis.description}
+              </p>
             </div>
-          </div>
-          <Divider />
-          <div className="panel-description-container">
-            <p className="panel-connection-header">Description</p>
-            <p className="panel-description">
-              {currentPanelItem.apis.description}
-            </p>
-          </div>
-          <Divider />
-          <div className="panel-connection-container">
-            <h3 className="panel-connection-header">Connection</h3>
-            <div className="panel-connection-containers-container">
-              <div className="panel-connection-container-left">
-                <p className="panel-connection-text-item">
-                  <p className="panel-connection-label-text">
-                    Lead Developer:
-                    <span className="panel-connection-value-text">
-                      {currentPanelItem.apis.developer}
-                    </span>
+            <Divider />
+            <div className="panel-connection-container">
+              <h3 className="panel-connection-header">Connection</h3>
+              <div className="panel-connection-containers-container">
+                <div className="panel-connection-container-left">
+                  <p className="panel-connection-text-item">
+                    <p className="panel-connection-label-text">
+                      Lead Developer:
+                      <span className="panel-connection-value-text">
+                        {currentPanelItem.apis.developer}
+                      </span>
+                    </p>
                   </p>
-                </p>
-                <p className="panel-connection-text-item">
-                  <p className="panel-connection-label-text">
-                    Last Updated:
-                    <span className="panel-connection-value-text">
-                      {currentPanelItem.apis.last_update}
-                    </span>
+                  <p className="panel-connection-text-item">
+                    <p className="panel-connection-label-text">
+                      Last Updated:
+                      <span className="panel-connection-value-text">
+                        {currentPanelItem.apis.last_update}
+                      </span>
+                    </p>
                   </p>
-                </p>
-              </div>
-              <div className="panel-connection-container-right">
-                <p className="panel-connection-text-item">
-                  <p className="panel-connection-label-text">
-                    Using:
-                    <span className="panel-connection-value-text">
-                      {currentPanelItem.apis.tray_version}
-                    </span>
+                </div>
+                <div className="panel-connection-container-right">
+                  <p className="panel-connection-text-item">
+                    <p className="panel-connection-label-text">
+                      Using:
+                      <span className="panel-connection-value-text">
+                        {currentPanelItem.apis.tray_version}
+                      </span>
+                    </p>
                   </p>
-                </p>
-                <p className="panel-connection-text-item">
-                  <p className="panel-connection-label-text">
-                    Latest:
-                    <span className="panel-connection-value-text">
-                      {currentPanelItem.apis.latest_version}
-                    </span>
+                  <p className="panel-connection-text-item">
+                    <p className="panel-connection-label-text">
+                      Latest:
+                      <span className="panel-connection-value-text">
+                        {currentPanelItem.apis.latest_version}
+                      </span>
+                    </p>
                   </p>
-                </p>
+                </div>
               </div>
             </div>
-          </div>
-          <Divider />
-          <div className="panel-updates-contents-container">
-            <h3 className="panel-connection-header">Updates</h3>
-            <div className="panel-updates-wrapper">
-              <Updates
-                name={currentPanelItem.apis.name}
-                updates={currentPanelItem.updates}
-                latestVersion={currentPanelItem.apis.latest_version}
-                checkStatusColor={props.checkStatusColor}
-                handleFormDataSubmit={props.handleFormDataSubmit}
-                handleAddNote={props.handleAddNote}
-                notes={currentPanelItem.notes}
-                users={currentPanelItem.users}
-                apiId={currentPanelItem.apis.id}
-                handleAddNewUpdate={props.handleAddNewUpdate}
-                newUpdate={props.newUpdate}
-                handleStateUpdate={props.handleStateUpdate}
+            <Divider />
+            <div className="panel-updates-contents-container">
+              <h3 className="panel-connection-header">Updates</h3>
+              <div className="panel-updates-wrapper">
+                <Updates
+                  name={currentPanelItem.apis.name}
+                  updates={currentPanelItem.updates}
+                  latestVersion={currentPanelItem.apis.latest_version}
+                  checkStatusColor={props.checkStatusColor}
+                  handleFormDataSubmit={props.handleFormDataSubmit}
+                  handleAddNote={props.handleAddNote}
+                  notes={currentPanelItem.notes}
+                  users={currentPanelItem.users}
+                  apiId={currentPanelItem.apis.id}
+                  handleAddNewUpdate={props.handleAddNewUpdate}
+                  newUpdate={props.newUpdate}
+                  handleStateUpdate={props.handleStateUpdate}
+                />
+              </div>
+            </div>
+            <div className="display-none">
+              <ApiContent
+                description = {currentPanelItem.apis.description}
+                trayVersion = {currentPanelItem.apis.tray_version}
+                lastUpdated = {currentPanelItem.apis.last_update}
+              />
+
+              <Connection
+                latestVersion = {currentPanelItem.apis.latest_version}
+                accManager = {currentPanelItem.apis.api_acc_manager}
+                leadDev = {currentPanelItem.apis.developer}
               />
             </div>
-          </div>
-          <div className="display-none">
-            <ApiContent
-              description = {currentPanelItem.apis.description}
-              trayVersion = {currentPanelItem.apis.tray_version}
-              lastUpdated = {currentPanelItem.apis.last_update}
-            />
-
-            <Connection
-              latestVersion = {currentPanelItem.apis.latest_version}
-              accManager = {currentPanelItem.apis.api_acc_manager}
-              leadDev = {currentPanelItem.apis.developer}
-            />
-          </div>
-        </Fragment>
-      ) : (
-        <Loader />
-      )}
-    </div>
+          </Fragment>
+        ) : (
+          <Loader />
+        )}
+      </div> : null }
+    </Fragment>
   );
 };
 

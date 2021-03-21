@@ -11,13 +11,15 @@ import axios from "axios";
 
 const Dashboard = () => {
   const [data, setData] = useState(initStateData);
-  const [showPanel, setShowPanel] = useState(1);
+  const [showPanel, setShowPanel] = useState("");
   const [loader, setLoader] = useState(false);
   const [newUpdate, setNewUpdate] = useState({
     title: "",
     text: "",
     apiId: ""
   });
+  const local = true;
+  // const domain = local ? "http://localhost:3001/" : "https:"
 
   useEffect(() => {
     fetchData();
@@ -86,6 +88,7 @@ const Dashboard = () => {
         });
         setData({ versions: finalVersion });
         setLoader(false);
+        setShowPanel(newVersions[0].id);
       })
       .catch((err) => console.log(err));
   };
