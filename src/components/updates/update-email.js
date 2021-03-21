@@ -10,7 +10,6 @@ const UpdateEmail = (props) => {
   });
 
   const handleFormData = (el, type, id) => {
-    console.log(el);
     const newFormData = {...formData};
     newFormData[type] = el;
     newFormData.id = id;
