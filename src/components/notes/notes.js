@@ -1,6 +1,7 @@
 import React from 'react'
 import Note from "./note";
 import NewNote from "./new-note";
+import Header from "../header/header";
 
 const Notes = (props) => {
   const currentNotes = props.notes.filter(e => e.update_id === props.id);
@@ -16,6 +17,7 @@ const Notes = (props) => {
 
   return (
     <div>
+      <Header title="Notes" />
       <div>
         {theNotes}
       </div>

@@ -102,11 +102,12 @@ const Dashboard = () => {
     setLoader(true);
     const rbObject = {
       status: formData.status,
-      deprecation_date: formData.date,
+      change_date: formData.date,
       endpoint: formData.endpoint,
       source: formData.source
     }
 
+    
     const json_rb_object = JSON.stringify(rbObject);
 
     axios.patch(`http://localhost:3001/updates/${formData.id}`, json_rb_object, { headers: { 'Content-Type': 'application/json' }})
