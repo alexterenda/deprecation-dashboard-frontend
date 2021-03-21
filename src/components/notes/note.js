@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Note = (props) => {
+  const curUser = props.users.find(e => e.id === props.userId);
   const formatDate = (dateIs) => {
     const date = new Date(dateIs);
 
@@ -18,7 +19,7 @@ const Note = (props) => {
   }
   return (
     <div>
-      <p>{props.user}</p>
+      <p>{curUser.username}</p>
       <p>{props.content}</p>
       <p>{formatDate(props.created)}</p>
     </div>

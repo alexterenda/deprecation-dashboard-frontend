@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import Header from "../header/header";
 import EachUpdateLink from "./each-update-link";
 import UpdateEmail from "./update-email";
+import CreateUpdate from "./create-update/create-update";
 import Notes from "../notes/notes";
 
 const Updates = (props) => {
@@ -23,10 +24,11 @@ const Updates = (props) => {
   };
 
   const createUpdates = props.updates.map((update) => {
+    console.log(update);
     return (
       <Fragment>
-        <EachUpdateLink
-          name={props.name}
+        <EachUpdateLink 
+          name={update.title}
           version={props.latestVersion}
           status={update.status}
           checkStatusColor={props.checkStatusColor}
@@ -44,16 +46,30 @@ const Updates = (props) => {
               handleAddNote={props.handleAddNote}
               id={update.id}
               notes={props.notes}
+              users={props.users}
             />
           </Fragment>
         ) : null}
+
+        </Fragment> : null }
       </Fragment>
     );
   });
-
+  
   return (
     <div className="updates-container">
       <div className="update-items-container">{createUpdates}</div>
+        <Header 
+        title = {`Updates for ${props.name} API`}
+        />
+        <CreateUpdate 
+          apiId={props.apiId}
+          handleAddNewUpdate={props.handleAddNewUpdate}
+          newUpdate={props.newUpdate}
+          handleStateUpdate={props.handleStateUpdate}
+        />
+      </div>
+      {createUpdates}
     </div>
   );
 };

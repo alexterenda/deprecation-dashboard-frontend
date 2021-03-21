@@ -7,14 +7,9 @@ const EachUpdateLink = (props) => {
       onClick={() => props.showUpdateEmail(props.updateId)}
       className="update-item-container"
     >
-      <p>
-        {props.name} UPDATE {props.version}
-      </p>
+      <p>{props.version} {props.name} UPDATE </p>
       <div className="update-item-deprecation-status-container">
-        <DeprecationStatus
-          checkStatusColor={props.checkStatusColor}
-          status={props.status}
-        />
+        <DeprecationStatus checkStatusColor = {props.checkStatusColor} status={props.status}/>
       </div>
     </div>
   );

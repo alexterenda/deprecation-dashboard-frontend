@@ -26,13 +26,10 @@ const Panel = (props) => {
             <div className="panel-api-contents-container">
               <div className="panel-api-contents-header-container">
                 <div className="panel-api-contents-header-container-left">
-                  <Header title={currentPanelItem.apis.name} />
+                  <Header title = {currentPanelItem.apis.name}/>
                 </div>
                 <div className="panel-api-contents-header-container-right">
-                  <DeprecationStatus
-                    checkStatusColor={props.checkStatusColor}
-                    status={currentPanelItem.apis.status}
-                  />
+                  <DeprecationStatus checkStatusColor = {props.checkStatusColor} status = {currentPanelItem.apis.status} />
                 </div>
               </div>
               <div className="panel-api-contents-account-container">
@@ -45,7 +42,7 @@ const Panel = (props) => {
               </div>
             </div>
             <div className="panel-image-container">
-              <PanelImage logoUrl={currentPanelItem.apis.logo_url} />
+              <PanelImage logoUrl = {currentPanelItem.apis.logo_url} />
             </div>
           </div>
           <Divider />
@@ -109,20 +106,25 @@ const Panel = (props) => {
                 handleFormDataSubmit={props.handleFormDataSubmit}
                 handleAddNote={props.handleAddNote}
                 notes={currentPanelItem.notes}
+                users={currentPanelItem.users}
+                apiId={currentPanelItem.apis.id}
+                handleAddNewUpdate={props.handleAddNewUpdate}
+                newUpdate={props.newUpdate}
+                handleStateUpdate={props.handleStateUpdate}
               />
             </div>
           </div>
           <div className="display-none">
             <ApiContent
-              description={currentPanelItem.apis.description}
-              trayVersion={currentPanelItem.apis.tray_version}
-              lastUpdated={currentPanelItem.apis.last_update}
+              description = {currentPanelItem.apis.description}
+              trayVersion = {currentPanelItem.apis.tray_version}
+              lastUpdated = {currentPanelItem.apis.last_update}
             />
 
             <Connection
-              latestVersion={currentPanelItem.apis.latest_version}
-              accManager={currentPanelItem.apis.api_acc_manager}
-              leadDev={currentPanelItem.apis.developer}
+              latestVersion = {currentPanelItem.apis.latest_version}
+              accManager = {currentPanelItem.apis.api_acc_manager}
+              leadDev = {currentPanelItem.apis.developer}
             />
           </div>
         </Fragment>
