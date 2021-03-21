@@ -8,15 +8,45 @@ const ApiListItem = (props) => {
       className="api-list-item-container"
     >
       <div className="api-list-item-image-container">
-        <img src={props.logo} alt="company-logo" className="api-list-item-image" />
+
+        <img
+          src={props.logo}
+          alt="company-logo"
+          className="api-list-item-image"
+        />
+
       </div>
       <div className="api-list-item-left-container">
-        <h3>{props.name}</h3>
-        <p>{props.trayVersion}</p>
+        <h3 className="api-list-item-name">{props.name}</h3>
+        <div className="api-list-item-developer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="api-list-item-developer-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
+          </svg>
+          <p className="api-list-item-developer-name">{props.trayVersion}</p>
+        </div>
       </div>
       <div className="api-list-item-middle-container">
-        <p>{props.trayVersion}</p>
-        <p>{props.latestVersion}</p>
+        <p className="api-list-item-value-text">
+          <span className="api-list-item-label-text">Using: </span>
+          {props.trayVersion}
+        </p>
+        <div className="api-list-text-container-bottom">
+          <p className="api-list-item-value-text">
+            <span className="api-list-item-label-text">Latest: </span>
+            {props.latestVersion}
+          </p>
+        </div>
       </div>
       <div className="api-list-item-right-container">
         <DeprecationStatus
@@ -24,7 +54,20 @@ const ApiListItem = (props) => {
           status={props.status}
         />
         <div className="api-list-item-icon-container">
-          <svg className="api-list-item-icon"></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="api-list-item-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
         </div>
       </div>
     </div>
