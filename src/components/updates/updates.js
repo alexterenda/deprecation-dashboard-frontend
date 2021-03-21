@@ -47,6 +47,7 @@ const Updates = (props) => {
             handleAddNote={props.handleAddNote}
             id={update.id}
             notes={props.notes}
+            users={props.users}
           />
         </Fragment> : null }
       </Fragment>

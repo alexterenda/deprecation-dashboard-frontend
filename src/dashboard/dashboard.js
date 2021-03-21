@@ -61,6 +61,13 @@ const Dashboard = () => {
           };
         });
 
+        const newUsers = val.users.map((user) => {
+          return {
+            id: user.id,
+            username: user.username
+          }
+        });
+
         const finalVersion = val.apis.map((fin) => {
           const nversion = newVersions.find((e) => e.id === fin.id);
           const nupdate = newUpdates.filter((e) => e.api_id === fin.id);
@@ -68,6 +75,7 @@ const Dashboard = () => {
             apis: nversion,
             updates: nupdate,
             notes: newNotes,
+            users: newUsers
           };
         });
         setData({ versions: finalVersion });
@@ -111,8 +119,7 @@ const Dashboard = () => {
 
     const json_rb_object = JSON.stringify(rbObject);
 
-    axios
-      .patch(`http://localhost:3001/updates/${formData.id}`, json_rb_object, {
+    axios.patch(`http://localhost:3001/updates/${formData.id}`, json_rb_object, {
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
@@ -124,9 +131,24 @@ const Dashboard = () => {
   };
 
   const handleAddNote = (noteText, id) => {
+    const noteTextObj = {
+      text: noteText,
+      update_id: id,
+      user_id: 1
+    }
+
+    const json_note_text_obj = JSON.stringify(noteTextObj);
+
     // need to send a post request for the data
-    console.log(noteText);
-    console.log(id);
+    axios.post(`http://localhost:3001/notes`, json_note_text_obj, {
+      headers: { "Content-Type": "application/json" },
+    })
+    .then((response) => {
+      console.log(response);
+      setLoader(false);
+      fetchData();
+    })
+    .catch((error) => console.log(error));
   };
 
   return (

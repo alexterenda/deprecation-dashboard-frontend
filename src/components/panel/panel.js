@@ -46,6 +46,7 @@ const Panel = (props) => {
           handleFormDataSubmit={props.handleFormDataSubmit}
           handleAddNote={props.handleAddNote}
           notes={currentPanelItem.notes}
+          users={currentPanelItem.users}
         />
       </Fragment> : <Loader /> }
     </div>
