@@ -47,6 +47,7 @@ $pink-700: #be185d;
 
 $easing: cubic-bezier(0.645, 0.045, 0.355, 1);
 $transition: all 0.25s ease-in-out;
+$transition-fast: all 0.125s ease-in-out;
 
 html {
   box-sizing: border-box;
