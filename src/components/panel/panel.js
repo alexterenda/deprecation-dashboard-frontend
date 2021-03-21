@@ -47,6 +47,10 @@ const Panel = (props) => {
           handleAddNote={props.handleAddNote}
           notes={currentPanelItem.notes}
           users={currentPanelItem.users}
+          apiId={currentPanelItem.apis.id}
+          handleAddNewUpdate={props.handleAddNewUpdate}
+          newUpdate={props.newUpdate}
+          handleStateUpdate={props.handleStateUpdate}
         />
       </Fragment> : <Loader /> }
     </div>

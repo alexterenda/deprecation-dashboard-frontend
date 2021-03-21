@@ -10,7 +10,6 @@ const Updates = (props) => {
   const [show, setShow] = useState(false);
   const [showId, setShowId] = useState([]);
 
-
   const showUpdateEmail = (id) => {
     setShow(true);
     if (showId.includes(id)) {
@@ -26,17 +25,17 @@ const Updates = (props) => {
   }
 
   const createUpdates = props.updates.map((update) => {
+    console.log(update);
     return (
       <Fragment>
-        <CreateUpdate />
-        <EachUpdateLink 
-          name={props.name}
-          version={props.latestVersion}
-          status={update.status}
-          checkStatusColor={props.checkStatusColor}
-          updateId={update.id}
-          showUpdateEmail={showUpdateEmail}
-        />
+      <EachUpdateLink 
+        name={update.title}
+        version={props.latestVersion}
+        status={update.status}
+        checkStatusColor={props.checkStatusColor}
+        updateId={update.id}
+        showUpdateEmail={showUpdateEmail}
+      />
         {(show && showId.includes(update.id)) ? <Fragment>
           <UpdateEmail 
             text={update.text}
@@ -53,12 +52,18 @@ const Updates = (props) => {
       </Fragment>
     );
   });
-
+  
   return (
     <div>
       <div>
         <Header 
-          title = {`Updates for ${props.name} API`}
+        title = {`Updates for ${props.name} API`}
+        />
+        <CreateUpdate 
+          apiId={props.apiId}
+          handleAddNewUpdate={props.handleAddNewUpdate}
+          newUpdate={props.newUpdate}
+          handleStateUpdate={props.handleStateUpdate}
         />
       </div>
       {createUpdates}
