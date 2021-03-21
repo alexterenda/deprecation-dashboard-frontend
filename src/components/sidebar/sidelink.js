@@ -15,7 +15,7 @@ const SideLink = (props) => {
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              stroke-width="1.5"
               d={props.icon}
             />
           </svg>
