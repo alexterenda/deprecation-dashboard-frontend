@@ -136,9 +136,12 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-contents-container">
         <TopNav />
+
         <Divider />
 
         <CollectionList />
+
+        <Divider />
 
         {loader ? (
           <Loader />
