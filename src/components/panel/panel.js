@@ -17,7 +17,8 @@ const Panel = (props) => {
   
   return (
     <div>
-      {!props.data.tester ? <Fragment>
+      {!props.data.tester ? 
+      <Fragment>
         <div>
           <PanelImage logoUrl = {currentPanelItem.apis.logo_url} />
           <Header title = {currentPanelItem.apis.name}/>
@@ -46,8 +47,7 @@ const Panel = (props) => {
           handleAddNote={props.handleAddNote}
           notes={currentPanelItem.notes}
         />
-        </Fragment> : <Loader /> }
-
+      </Fragment> : <Loader /> }
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import Header from "../header/header";
 import EachUpdateLink from "./each-update-link";
 import UpdateEmail from "./update-email";
+import CreateUpdate from "./create-update/create-update";
 import Notes from "../notes/notes";
 
 
@@ -27,6 +28,7 @@ const Updates = (props) => {
   const createUpdates = props.updates.map((update) => {
     return (
       <Fragment>
+        <CreateUpdate />
         <EachUpdateLink 
           name={props.name}
           version={props.latestVersion}
