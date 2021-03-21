@@ -23,6 +23,7 @@ const Updates = (props) => {
     }
   };
 
+  console.log(props)
   const createUpdates = props.updates.map((update) => {
     console.log(update);
     return (
@@ -41,6 +42,7 @@ const Updates = (props) => {
               text={update.text}
               id={update.id}
               handleFormDataSubmit={props.handleFormDataSubmit}
+              source={update.source}
             />
             <Notes
               handleAddNote={props.handleAddNote}

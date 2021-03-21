@@ -4,7 +4,7 @@ const UpdateEmail = (props) => {
   const [formData, setFormData] = useState({
     date: "",
     endpoint: "",
-    source: "",
+    source: props.source,
     status: "clear",
     id: props.id
   });
