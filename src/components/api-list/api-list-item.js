@@ -8,11 +8,13 @@ const ApiListItem = (props) => {
       className="api-list-item-container"
     >
       <div className="api-list-item-image-container">
+
         <img
-          src="https://4bo0cq4bxnou2rimh3hwzwi8-wpengine.netdna-ssl.com/blog/wp-content/uploads/2018/02/22852120_1266763086768693_6004893502123596052_n.png"
-          alt=""
+          src={props.logo}
+          alt="company-logo"
           className="api-list-item-image"
         />
+
       </div>
       <div className="api-list-item-left-container">
         <h3 className="api-list-item-name">{props.name}</h3>

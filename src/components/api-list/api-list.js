@@ -13,6 +13,7 @@ const ApiList = (props) => {
         latestVersion={item.apis.latest_version}
         showPanel={props.showPanel}
         checkStatusColor={props.checkStatusColor}
+        logo={item.apis.logo_url}
       />
     );
   });
