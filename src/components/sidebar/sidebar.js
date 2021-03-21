@@ -19,7 +19,7 @@ const SideBar = () => {
 
   const apiLinks = ["Twitter", "Reddit"];
 
-  const collectionLinks = ["GraphQL APIs", "Ecommerce", "Payments"];
+  const collectionLinks = ["GraphQL APIs", "Ecommerce"];
 
   const createNavLinks = navLinks.map((link) => {
     return <SideLink content={link.name} icon={link.iconPath} />;
