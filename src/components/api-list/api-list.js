@@ -16,7 +16,13 @@ const ApiList = (props) => {
     );
   });
 
-  return <div className="api-list-container">{listItems}</div>;
+  return (
+    <div className="api-list-container">
+      <div className="api-list-heading">APIs</div>
+      <div className="api-list-filters-container"></div>
+      {listItems}
+    </div>
+  );
 };
 
 export default ApiList;

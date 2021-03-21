@@ -83,7 +83,6 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin-top: -10%;
 }
 
 // Loading Animation
@@ -93,6 +92,7 @@ $duration: 2.1s;
 
 .spinner {
   animation: rotator $duration linear infinite;
+  margin-top: -10%;
 }
 
 @keyframes rotator {
