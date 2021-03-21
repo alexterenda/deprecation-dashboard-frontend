@@ -9,7 +9,7 @@ const initStateData = {
       developer: "",
       description: "",
       api_acc_manager: "",
-      logo_url: "",
+      logo_url: "https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg",
       last_update: ""
     },
     updates: [{
