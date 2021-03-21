@@ -1,33 +1,47 @@
 .notifications-container {
   margin-left: 1rem;
-  color: $gray-800;
-  border: 1px solid pink;
-  width: 2rem;
-  height: 2rem;
+  color: $gray-500;
+  height: 2.5rem;
+  width: 2.5rem;
   position: relative;
-}
+  padding: 0.25rem;
+  border-radius: 9999rem;
+  cursor: pointer;
 
-.notifications-icon-container {
-  border: 1px solid green;
+  &:hover {
+    .notifications-icon {
+      color: $gray-600;
+    }
+
+    .notification-count {
+      background-color: $red-600;
+    }
+  }
 }
 
 .notifications-icon {
+  height: 2rem;
+  width: 2rem;
+  fill: none;
+  stroke-width: 2;
+  transition: $transition;
 }
 
 .notification-count-container {
   position: absolute;
   right: 0px;
   top: 0px;
-  border: 1px solid cyan;
 }
+
 .notification-count {
-  height: 10px;
-  width: 10px;
+  height: 0.6rem;
+  width: 0.6rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 8px;
-  background: red;
+  background-color: $red-500;
   color: white;
+  transition: $transition;
 }
