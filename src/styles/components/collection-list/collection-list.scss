@@ -1,11 +1,12 @@
 .collection-list-container {
   display: inline-flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0rem 1rem;
+  padding-top: 1rem;
   width: 100%;
   overflow-x: auto;
   white-space: nowrap;
-  height: 8.5rem;
+  height: 10rem;
 }
 
 .collection-list-heading {
