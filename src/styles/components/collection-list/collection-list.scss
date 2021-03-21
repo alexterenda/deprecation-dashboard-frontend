@@ -1,4 +1,16 @@
-.collections-container {
-  height: 4rem;
+.collection-list-container {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem;
   border: 1px solid darkgoldenrod;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.collection-list-item-container {
+  display: inline-block;
+  flex-direction: column;
+  border: 1px solid red;
+  // width: 10rem;
 }

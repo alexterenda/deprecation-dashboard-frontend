@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import Sidebar from "../components/sidebar/sidebar";
 import ApiList from "../components/api-list/api-list";
 import TopNav from "../components/top-nav/top-nav";
+import CollectionList from "../components/collection-list/collection-list";
 import Panel from "../components/panel/panel";
 import initStateData from "./initial-state-data";
 import Loader from "../components/loader/loader";
@@ -132,6 +133,9 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-contents-container">
         <TopNav />
+
+        <CollectionList />
+
         {loader ? <Loader /> : <Fragment>
           <ApiList
             data={data}
@@ -140,6 +144,7 @@ const Dashboard = () => {
             showPanel={handleShowPanel}
           />
         </Fragment>}
+
       </div>
       <div className="dashboard-panel-wrapper">
         {loader ? <Loader/> : <Panel

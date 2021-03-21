@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react'
+
 import PanelImage from "./image/image";
 import Header from "../header/header";
 import ApiContent from "./api-content/api-content";
 import Connection from "./connection/connection";
+
 import DeprecationStatus from '../depreciation-status/deprecation-status';
 import Updates from '../updates/updates';
 import Loader from "../../components/loader/loader";
@@ -45,8 +47,9 @@ const Panel = (props) => {
           notes={currentPanelItem.notes}
         />
         </Fragment> : <Loader /> }
+
     </div>
-  )
-}
+  );
+};
 
 export default Panel;
