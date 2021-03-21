@@ -8,13 +8,11 @@ const ApiListItem = (props) => {
       className="api-list-item-container"
     >
       <div className="api-list-item-image-container">
-
         <img
           src={props.logo}
           alt="company-logo"
           className="api-list-item-image"
         />
-
       </div>
       <div className="api-list-item-left-container">
         <h3 className="api-list-item-name">{props.name}</h3>
@@ -33,7 +31,7 @@ const ApiListItem = (props) => {
               d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
             />
           </svg>
-          <p className="api-list-item-developer-name">{props.trayVersion}</p>
+          <p className="api-list-item-developer-name">Alex Terenda</p>
         </div>
       </div>
       <div className="api-list-item-middle-container">

@@ -1,10 +1,156 @@
-.panel {
-  &-image {
-    height: 80px;
-    width: 56rem;
-    object-fit: cover;
+.panel-container {
+  padding: 1rem;
+}
+
+// Header Container
+
+.panel-header-contents-container {
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+.panel-api-contents-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-api-contents-header-container {
+  display: flex;
+}
+
+.panel-api-contents-header-container-left {
+}
+
+.panel-api-contents-header-container-right {
+  margin-left: auto;
+}
+
+.panel-api-contents-account-container {
+  padding: 1.5rem 0rem;
+}
+
+.panel-api-contents-account-header {
+  color: $gray-500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  padding: 0.25rem 0rem;
+}
+
+.panel-api-contents-account {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.panel-image-container {
+  margin-left: auto;
+  height: 8em;
+  width: 8rem;
+  border: 1px solid $gray-200;
+  box-shadow: $shadow-lg;
+  border-radius: 0.375rem;
+}
+
+.panel-image {
+  border-radius: 0.275rem;
+}
+
+// Description Container
+
+.panel-description-container {
+  padding: 1rem 0rem;
+}
+
+.panel-description {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+// Connection Container
+
+.panel-connection-container {
+  padding: 1rem 0rem;
+}
+
+.panel-connection-containers-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.panel-connection-container-left {
+  width: 75%;
+}
+
+.panel-connection-container-right {
+  width: 25%;
+}
+
+.panel-connection-label-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: $gray-500;
+}
+
+.panel-connection-value-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: $gray-900;
+  margin-left: 0.2rem;
+}
+
+.panel-connection-header {
+  color: $gray-500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  padding-bottom: 0.5rem;
+}
+
+.panel-connection-text-item {
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: $gray-900;
+}
+
+// Updates Container
+
+.panel-updates-contents-container {
+  padding: 1rem 0rem;
+}
+
+.panel-updates-wrapper {
+  box-shadow: $shadow-lg;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid $gray-200;
+  margin: 0.75rem 0rem;
+}
+
+.update-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  cursor: pointer;
+  transition: $transition-fast;
+  padding: 1rem;
+
+  &:hover {
+    background-color: $gray-50;
   }
 }
 
-.panel-container {
+.update-item-deprecation-status-container {
+  margin-left: auto;
 }
+
+.update-item-form-container {
+  padding: 0rem 1rem;
+}
+
+// Notes Container

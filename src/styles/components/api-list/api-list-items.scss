@@ -16,8 +16,11 @@
 }
 
 .api-list-item-image {
+  min-height: 3rem;
+  min-width: 3rem;
   height: 3rem;
   width: 3rem;
+  object-fit: cover;
 }
 
 .api-list-item-left-container {

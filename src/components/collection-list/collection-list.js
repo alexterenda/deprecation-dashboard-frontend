@@ -15,12 +15,6 @@ const CollectionList = () => {
       name: "Ecommerce",
       itemCount: "28",
     },
-    {
-      tag: "P",
-      class: "collection-list-item-3",
-      name: "Payments",
-      itemCount: "5",
-    },
   ];
 
   const createCollectionListItems = collectionListItems.map((item) => {
