@@ -11,8 +11,8 @@ const Panel = (props) => {
   let currentPanelItem;
   if (!props.data.tester) {
     currentPanelItem = props.data.versions.find(e => e.apis.id === props.panelId);
-  } 
-
+  }
+  
   return (
     <div>
       {!props.data.tester ? <Fragment>
@@ -42,6 +42,7 @@ const Panel = (props) => {
           checkStatusColor={props.checkStatusColor}
           handleFormDataSubmit={props.handleFormDataSubmit}
           handleAddNote={props.handleAddNote}
+          notes={currentPanelItem.notes}
         />
         </Fragment> : <Loader /> }
     </div>

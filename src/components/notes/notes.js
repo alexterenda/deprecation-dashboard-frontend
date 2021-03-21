@@ -3,13 +3,21 @@ import Note from "./note";
 import NewNote from "./new-note";
 
 const Notes = (props) => {
+  const currentNotes = props.notes.filter(e => e.update_id === props.id);
+  const theNotes = currentNotes.map((note) => {
+    return (
+      <Note 
+        user="Max Sherman"
+        content={note.text}
+        created={note.created_at}
+      />
+    );
+  });
+
   return (
     <div>
       <div>
-        <Note 
-          user="Max Sherman"
-          content="Hi Regis, could you please update this, thanks!"
-        />
+        {theNotes}
       </div>
       <div>
         <NewNote

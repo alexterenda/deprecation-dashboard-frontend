@@ -48,12 +48,24 @@ const Dashboard = () => {
             text: update.text
           }
         });
+
+        const newNotes = val.notes.map((note) => {
+          return {
+            id: note.id,
+            update_id: note.update_id,
+            user_id: note.user_id,
+            text: note.text,
+            created_at: note.created_at
+          }
+        });
+        
         const finalVersion = val.apis.map((fin) => {
           const nversion = newVersions.find(e => e.id === fin.id);
           const nupdate = newUpdates.filter(e => e.api_id === fin.id);
           return {
             apis: nversion,
-            updates: nupdate
+            updates: nupdate,
+            notes: newNotes
           }
         });
         setData({ versions: finalVersion });
