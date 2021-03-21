@@ -6,7 +6,7 @@ const UpdateEmail = (props) => {
     endpoint: "",
     source: props.source,
     status: "clear",
-    id: props.id
+    id: props.id,
   });
 
   const handleFormData = (el, type, id) => {
@@ -59,8 +59,8 @@ const UpdateEmail = (props) => {
           Update
         </button>
       </div>
-      <div>
-        <p>{props.text}</p>
+      <div className="update-email-text-container">
+        <p className="update-email-text">{props.text}</p>
       </div>
     </div>
   );

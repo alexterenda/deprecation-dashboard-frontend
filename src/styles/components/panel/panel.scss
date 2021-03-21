@@ -129,7 +129,7 @@
   overflow: hidden;
   border-radius: 0.375rem;
   border: 1px solid $gray-200;
-  margin: 0.75rem 0rem;
+  margin: 0.75rem 0rem 0rem;
 }
 
 .update-item-container {
@@ -151,6 +151,37 @@
 
 .update-item-form-container {
   padding: 0rem 1rem;
+  padding-top: 1rem;
+  width: 100%;
 }
 
+.create-update-container {
+  padding: 0rem 1rem;
+  padding-top: 1rem;
+}
+
+.create-update-form {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  height: min-content;
+  width: 100%;
+}
+
+.update-email-text-container {
+}
+.update-email-text {
+  padding: 1rem 0rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: $gray-700;
+}
 // Notes Container
+
+.notes-container {
+  padding: 1rem;
+}
+
+.note-container {
+  padding: 0.75rem;
+}
