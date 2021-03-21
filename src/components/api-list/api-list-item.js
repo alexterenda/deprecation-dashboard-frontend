@@ -8,7 +8,7 @@ const ApiListItem = (props) => {
       className="api-list-item-container"
     >
       <div className="api-list-item-image-container">
-        <img src="" alt="" className="api-list-item-image" />
+        <img src={props.logo} alt="company-logo" className="api-list-item-image" />
       </div>
       <div className="api-list-item-left-container">
         <h3>{props.name}</h3>
