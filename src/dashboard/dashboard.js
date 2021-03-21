@@ -136,6 +136,7 @@ const Dashboard = () => {
     };
 
     const json_rb_object = JSON.stringify(rbObject);
+    console.log(formData)
 
     axios.patch(`http://localhost:3001/updates/${formData.id}`, json_rb_object, {
         headers: { "Content-Type": "application/json" },
