@@ -1,29 +1,77 @@
 .api-list-item-container {
   display: flex;
   align-items: center;
+  justify-content: stretch;
   cursor: pointer;
-  border: 1px solid green;
+  transition: $transition-fast;
+  border-bottom: 1px solid $gray-200;
+  padding: 0.25rem;
+
+  &:hover {
+    background-color: $gray-50;
+  }
 }
 
 .api-list-item-image-container {
-  border: 1px solid pink;
 }
 
 .api-list-item-image {
-  margin: 1rem;
-  height: 1rem;
-  width: 1rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 .api-list-item-left-container {
-  border: 1px solid blue;
+  padding-left: 1rem;
   flex: 1 1 0;
 }
 
 .api-list-item-middle-container {
   margin-left: auto;
-  border: 1px solid pink;
   flex: 1 1 0;
+}
+
+.api-list-item-name {
+  color: $gray-900;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+.api-list-item-developer {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: $gray-500;
+  margin-top: 0.25rem;
+}
+.api-list-item-developer-name {
+  margin-left: 0.5rem;
+}
+
+.api-list-item-developer-icon {
+  color: $gray-400;
+  height: 1rem;
+  width: 1rem;
+  fill: none;
+  stroke-width: 2;
+  transition: $transition-fast;
+}
+.api-list-item-label-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+  color: $gray-500;
+}
+
+.api-list-item-value-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: $gray-700;
+  font-weight: 500;
+}
+
+.api-list-text-container-bottom {
+  margin-top: 0.25rem;
 }
 
 .api-list-item-right-container {
@@ -31,33 +79,38 @@
   flex-direction: row;
   align-items: center;
   margin-left: auto;
-  border: 1px solid blue;
 }
 
 .api-list-item-icon-container {
-  border: 1px solid pink;
-  margin: 1rem;
-  height: 1rem;
-  width: 1rem;
+  padding: 0rem 1rem;
 }
 
 .api-list-item-icon {
+  color: $gray-400;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: none;
+  stroke-width: 2;
+  transition: $transition-fast;
 }
 
 .status {
-  height: 50px;
-  width: 50px;
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 50%;
 
   &-green {
-    background: green;
+    background: $green-100;
+    border: 2px solid $green-400;
   }
 
   &-orange {
-    background: orange;
+    background: $yellow-100;
+    border: 2px solid $yellow-400;
   }
 
   &-red {
-    background: red;
+    background: $red-100;
+    border: 2px solid $red-400;
   }
 }

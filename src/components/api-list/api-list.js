@@ -7,6 +7,7 @@ const ApiList = (props) => {
       <ApiListItem
         id={item.apis.id}
         name={item.apis.name}
+        logoUrl={item.apis.logoUrl}
         status={item.apis.status}
         trayVersion={item.apis.tray_version}
         latestVersion={item.apis.latest_version}
@@ -20,7 +21,7 @@ const ApiList = (props) => {
     <div className="api-list-container">
       <div className="api-list-heading">APIs</div>
       <div className="api-list-filters-container"></div>
-      {listItems}
+      <div className="api-list-items-container">{listItems}</div>
     </div>
   );
 };
