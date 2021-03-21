@@ -1,0 +1,14 @@
+.divider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0rem 1rem;
+}
+
+.divider {
+  width: 100%;
+  padding: 0rem 1rem;
+  border-bottom: 1px solid $gray-200;
+}

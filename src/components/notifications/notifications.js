@@ -4,13 +4,24 @@ const Notifications = () => {
   return (
     <>
       <div className="notifications-container">
-        <div className="notifications-icon-container">
-          <div className="notifications-icon">
-            <i className="fas fa-bell"></i>
-          </div>
-          <div className="notification-count-container">
-            <p className="notification-count">2</p>
-          </div>
+        <div className="notifications-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="notifications-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+            />
+          </svg>
+        </div>
+        <div className="notification-count-container">
+          <span className="notification-count"></span>
         </div>
       </div>
     </>
