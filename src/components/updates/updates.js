@@ -27,7 +27,7 @@ const Updates = (props) => {
     console.log(update);
     return (
       <Fragment>
-        <EachUpdateLink 
+        <EachUpdateLink
           name={update.title}
           version={props.latestVersion}
           status={update.status}
@@ -53,21 +53,18 @@ const Updates = (props) => {
       </Fragment>
     );
   });
-  
+
   return (
-    <div className="updates-container">
-      <div className="update-items-container">
-        <Header 
-        title = {`Updates for ${props.name} API`}
-        />
-        <CreateUpdate 
+    <div>
+      <div className="create-update-container">
+        <CreateUpdate
           apiId={props.apiId}
           handleAddNewUpdate={props.handleAddNewUpdate}
           newUpdate={props.newUpdate}
           handleStateUpdate={props.handleStateUpdate}
         />
       </div>
-      {createUpdates}
+      <div className="panel-updates-wrapper">{createUpdates}</div>
     </div>
   );
 };
