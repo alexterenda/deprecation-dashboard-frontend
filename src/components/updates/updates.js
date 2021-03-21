@@ -50,15 +50,13 @@ const Updates = (props) => {
             />
           </Fragment>
         ) : null}
-
-        </Fragment> : null }
       </Fragment>
     );
   });
   
   return (
     <div className="updates-container">
-      <div className="update-items-container">{createUpdates}</div>
+      <div className="update-items-container">
         <Header 
         title = {`Updates for ${props.name} API`}
         />
