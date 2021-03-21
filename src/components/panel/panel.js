@@ -17,7 +17,8 @@ const Panel = (props) => {
   
   return (
     <div>
-      {!props.data.tester ? <Fragment>
+      {!props.data.tester ? 
+      <Fragment>
         <div>
           <PanelImage logoUrl = {currentPanelItem.apis.logo_url} />
           <Header title = {currentPanelItem.apis.name}/>
@@ -45,9 +46,13 @@ const Panel = (props) => {
           handleFormDataSubmit={props.handleFormDataSubmit}
           handleAddNote={props.handleAddNote}
           notes={currentPanelItem.notes}
+          users={currentPanelItem.users}
+          apiId={currentPanelItem.apis.id}
+          handleAddNewUpdate={props.handleAddNewUpdate}
+          newUpdate={props.newUpdate}
+          handleStateUpdate={props.handleStateUpdate}
         />
-        </Fragment> : <Loader /> }
-
+      </Fragment> : <Loader /> }
     </div>
   );
 };

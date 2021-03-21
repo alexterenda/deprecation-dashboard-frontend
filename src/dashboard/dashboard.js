@@ -13,6 +13,11 @@ const Dashboard = () => {
   const [data, setData] = useState(initStateData);
   const [showPanel, setShowPanel] = useState(1);
   const [loader, setLoader] = useState(false);
+  const [newUpdate, setNewUpdate] = useState({
+    title: "",
+    text: "",
+    apiId: ""
+  });
 
   useEffect(() => {
     fetchData();
@@ -48,6 +53,7 @@ const Dashboard = () => {
             source: update.source,
             endpoint: update.endpoint,
             text: update.text,
+            title: update.title
           };
         });
 
@@ -61,6 +67,13 @@ const Dashboard = () => {
           };
         });
 
+        const newUsers = val.users.map((user) => {
+          return {
+            id: user.id,
+            username: user.username
+          }
+        });
+
         const finalVersion = val.apis.map((fin) => {
           const nversion = newVersions.find((e) => e.id === fin.id);
           const nupdate = newUpdates.filter((e) => e.api_id === fin.id);
@@ -68,6 +81,7 @@ const Dashboard = () => {
             apis: nversion,
             updates: nupdate,
             notes: newNotes,
+            users: newUsers
           };
         });
         setData({ versions: finalVersion });
@@ -77,9 +91,21 @@ const Dashboard = () => {
   };
   const handleShowPanel = (newId) => {
     setShowPanel(newId);
+    setNewUpdate({
+      title: "",
+      text: "",
+      apiId: ""
+    });
   };
 
   // console.log(data);
+
+  const handleStateUpdate = (el, type, id) => {
+    const new_obj = {...newUpdate};
+    new_obj[type] = el;
+    new_obj.apiId = id;
+    setNewUpdate(new_obj);
+  }
 
   const checkStatusColor = (status) => {
     let change;
@@ -111,8 +137,7 @@ const Dashboard = () => {
 
     const json_rb_object = JSON.stringify(rbObject);
 
-    axios
-      .patch(`http://localhost:3001/updates/${formData.id}`, json_rb_object, {
+    axios.patch(`http://localhost:3001/updates/${formData.id}`, json_rb_object, {
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
@@ -124,10 +149,51 @@ const Dashboard = () => {
   };
 
   const handleAddNote = (noteText, id) => {
+    setLoader(true);
+    const noteTextObj = {
+      text: noteText,
+      update_id: id,
+      user_id: 1
+    }
+
+    const json_note_text_obj = JSON.stringify(noteTextObj);
+
     // need to send a post request for the data
-    console.log(noteText);
-    console.log(id);
+    axios.post(`http://localhost:3001/notes`, json_note_text_obj, {
+      headers: { "Content-Type": "application/json" },
+    })
+    .then((response) => {
+      console.log(response);
+      setLoader(false);
+      fetchData();
+    })
+    .catch((error) => console.log(error));
   };
+
+  const handleAddNewUpdate = (newUpdate) => {
+    setLoader(true);
+    const new_obj = {
+      title: newUpdate.title,
+      api_id: newUpdate.apiId,
+      text: newUpdate.text
+    }
+
+    const json_new_obj = JSON.stringify(new_obj);
+    axios.post(`http://localhost:3001/updates`, json_new_obj, {
+      headers: { "Content-Type": "application/json" },
+    })
+    .then((response) => {
+      console.log(response);
+      setLoader(false);
+      setNewUpdate({
+        title: "",
+        text: "",
+        apiId: ""
+      });
+      fetchData();
+    })
+    .catch((error) => console.log(error));
+  }
 
   return (
     <div className="dashboard">
@@ -166,6 +232,9 @@ const Dashboard = () => {
             checkStatusColor={checkStatusColor}
             handleFormDataSubmit={handleFormDataSubmit}
             handleAddNote={handleAddNote}
+            handleAddNewUpdate={handleAddNewUpdate}
+            newUpdate={newUpdate}
+            handleStateUpdate={handleStateUpdate}
           />
         )}
       </div>
