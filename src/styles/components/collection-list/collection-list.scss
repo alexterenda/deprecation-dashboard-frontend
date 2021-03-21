@@ -1,6 +1,6 @@
 .collection-list-container {
   display: inline-flex;
-  align-items: center;
+  flex-direction: column;
   padding: 1rem;
   border: 1px solid darkgoldenrod;
   width: 100%;
@@ -8,9 +8,94 @@
   white-space: nowrap;
 }
 
+.collection-list-heading {
+  color: $gray-500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.collection-list-items-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 1.25rem;
+  margin-top: 0.75rem;
+}
+
 .collection-list-item-container {
-  display: inline-block;
+  display: flex;
+  border-radius: 0.375rem;
+  box-shadow: $shadow-lg;
+  border: 1px solid $gray-200;
+  max-width: 16rem;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.025);
+
+    .collection-list-name-container {
+      color: $gray-800;
+    }
+
+    .collection-list-icon-container {
+      color: $gray-500;
+    }
+  }
+}
+
+.collection-list-tag-container {
+  display: flex;
   flex-direction: column;
-  border: 1px solid red;
-  // width: 10rem;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  max-width: 4rem;
+  background-color: $gray-900;
+  color: $white;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem 0rem 0rem 0.375rem;
+}
+
+.collection-list-info-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: $transition;
+}
+
+.collection-list-name-container {
+  color: $gray-900;
+  font-weight: 500;
+  transition: $transition;
+}
+
+.collection-list-count-container {
+  color: $gray-500;
+}
+
+.collection-list-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition: $transition;
+}
+
+.collection-list-icon {
+  color: $gray-400;
+  margin-right: 0.75rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: none;
+  stroke-width: 2;
+  transition: $transition-fast;
 }
